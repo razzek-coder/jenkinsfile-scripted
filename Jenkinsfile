@@ -1,4 +1,4 @@
-node('windows') {
+node('jdk21') {
   stage('Stage1') {
     echo 'Ejecucion stage 1'
   }
