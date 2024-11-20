@@ -6,7 +6,11 @@ node('jdk21') {
       echo 'Ejecucion stage 1'
     }
     stage('Stage2') {
-      bat "${mvnHome}/bin/mvn" + ' --version'
+      try {
+        bat "${mvnHome}/bin/mvn" + ' --version'
+      } finally {
+        echo 'dentro de stage 2'
+      }
     }
     stage('Stage3') {
       echo 'Ejecucion stage 3'
